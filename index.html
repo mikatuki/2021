@@ -1,0 +1,42 @@
+<!-- 2021/12/03 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>001_おみくじ</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: whitesmoke;
+      }
+      #ans {
+        margin: 25px;
+      }
+      #btn {
+        background-color: #58B2DC;
+        border: none;
+        padding: 10px;
+        border-radius: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ans">おみくじ</div>
+    <input type="button" id="btn" value="クリック">
+
+    <script type="text/javascript">
+      document.getElementById("btn").onclick = function () {
+        var rnd = Math.floor( Math.random()*6 );
+        var ans;
+
+        if (rnd == 0) ans = "きつね";
+        if (rnd == 1) ans = "ねこ";
+        if (rnd == 2) ans = "たぬき";
+        if (rnd == 3) ans = "あざらし";
+        if (rnd == 4) ans = "ぞう";
+        if (rnd == 5) ans = "きりん";
+        alert(ans);
+      }
+    </script>
+  </body>
+</html>
