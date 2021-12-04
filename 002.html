@@ -1,0 +1,30 @@
+<!-- 12/04 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>002</title>
+    <style media="screen">
+      body {
+        text-align:center;
+      }
+      .text {
+      }
+
+    </style>
+  </head>
+  <body>
+    <p class="text">今年は残り</p>
+    <h1 id="day"></h1>
+
+    <script type="text/javascript">
+      <!-- 今日の日付 -->
+      var today = new Date();
+      <!-- 大晦日の日付 -->
+      var lastDay = Date.parse(today.getFullYear()+"/12/31");
+      <!-- ミリ秒に直して、引き算して、日付に直して、代入 -->
+      document.getElementById("day").innerHTML = Math.floor((lastDay-today.getTime())/(24 * 60 * 60*1000))+1;
+
+    </script>
+  </body>
+</html>
