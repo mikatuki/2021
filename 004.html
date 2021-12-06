@@ -1,0 +1,38 @@
+<!-- 12/04 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>004</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style media="screen">
+      body {
+        text-align:center;
+        font-family: 'Shadows Into Light', cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text">こんにちわ世界</h1>
+    <select class="" name="helloWorld">
+      <option value="jpn">日本</option>
+      <option value="en">英語</option>
+      <option value="cha">中国</option>
+      <option value="azl">アゼルバイジャン</option>
+    </select>
+
+    <script type="text/javascript">
+        $('[name=helloWorld]').change(function() {
+        // 選択されているvalue属性値を取り出す
+        var lng = $('[name=helloWorld]').val();
+        switch(lng){
+          case 'jpn' : $(".text").text("こんにちわ世界"); break;
+          case 'en' : $(".text").text("HelloWorld"); break;
+          case 'cha' : $(".text").text("你好，世界"); break;
+          case 'azl' : $(".text").text("Salam dünya"); break;
+          default : $(".text").text("さよなら、世界");
+        }
+      });
+    </script>
+  </body>
+</html>
