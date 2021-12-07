@@ -1,0 +1,45 @@
+<!-- 12/07 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>005</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style media="screen">
+      body {
+        text-align:center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>入力した文字を同時に出す</h1>
+      <input type="text" id="text" name="" value="">
+      <p id="num"></p>
+      <div id="output"></div>
+    <script type="text/javascript">
+    $(function(){
+      $(document).on('input', '#text', function(e) {
+        $('#output').text($('#text').val());
+        $('#num').text($('#text').val().length);
+      });
+      // 配列の練習してた
+      // let a = [];
+      // let num = 5;
+      // a.push(num);
+      // console.log(a);
+      //
+      // for(let i = 0;i < 5;i++){
+      //   a.push(i);
+      // }
+      //
+      // console.log(a);
+
+    });
+
+    </script>
+  </body>
+</html>
