@@ -1,0 +1,113 @@
+<!-- 12/08 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>006</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style media="screen">
+      body {
+        text-align:center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #text {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ライム調べよ（平仮名のみ対応）</h1>
+      <input type="text" id="text" name="" value="">
+      <button type="button" id="btn">韻調査</button>
+      <div id="output"></div>
+
+    <script type="text/javascript">
+    $(function(){
+      $('#btn').on('click',function(e) {
+        let A_rhyme = '';
+        let B_rhyme = $('#text').val();
+
+      for(let i=0;i <= B_rhyme.length;i++){
+          switch (B_rhyme.charAt(i)) {
+            case 'あ':
+            case 'か':
+            case 'さ':
+            case 'た':
+            case 'な':
+            case 'は':
+            case 'ま':
+            case 'や':
+            case 'ら':
+            case 'わ':
+                A_rhyme += 'A';
+            break;
+            case 'い':
+            case 'き':
+            case 'し':
+            case 'ち':
+            case 'に':
+            case 'ひ':
+            case 'み':
+            case 'り':
+                A_rhyme += 'I';
+            break;
+            case 'う':
+            case 'く':
+            case 'す':
+            case 'つ':
+            case 'ぬ':
+            case 'ふ':
+            case 'む':
+            case 'ゆ':
+            case 'る':
+                A_rhyme += 'U';
+            break;
+            case 'え':
+            case 'け':
+            case 'せ':
+            case 'て':
+            case 'ね':
+            case 'へ':
+            case 'め':
+            case 'れ':
+                A_rhyme += 'E';
+            break;
+            case 'お':
+            case 'こ':
+            case 'そ':
+            case 'と':
+            case 'の':
+            case 'ほ':
+            case 'も':
+            case 'よ':
+            case 'ろ':
+            case 'を':
+                A_rhyme += 'O';
+            break;
+            case 'ん': A_rhyme += 'N'; break;
+            default: A_rhyme += '(ごめん未対応)'; break;
+          }
+        }
+
+        $('#output').text(A_rhyme);
+
+      });
+      // 配列の練習してた
+      // let a = [];
+      // let num = 5;
+      // a.push(num);
+      // console.log(a);
+      //
+      // for(let i = 0;i < 5;i++){
+      //   a.push(i);
+      // }
+      //
+      // console.log(a);
+
+    });
+
+    </script>
+  </body>
+</html>
