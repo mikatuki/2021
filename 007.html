@@ -1,0 +1,72 @@
+<!-- 12/09 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>007</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <style media="screen">
+      body {
+        text-align:center;
+        font-family: 'Hachi Maru Pop', cursive;
+      }
+      h1 {
+        margin-bottom: 0px;
+      }
+      .hira_form {
+        display: flex;
+        justify-content: center;
+      }
+      #hira_text {
+        border: solid 1px #16d48f;
+        border-radius: 50px;
+        margin-right: 15px;
+        padding: 0 10px;
+      }
+      #btn {
+        width: 50px;
+        height: 50px;
+        border: none;
+        background-color: #ffff40;
+        -webkit-box-shadow: 0 2px 0 #e6d900;
+        box-shadow: 0 2px 0 #e6d900;
+        border-radius: 50px;
+      }
+      #btn:hover {
+        -webkit-transform: translate(0, 3px);
+        transform: translate(0, 3px);
+        -webkit-box-shadow: 0 1px 0 #e6d900;
+        box-shadow: 0 1px 0 #e6d900;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>ひらがな？</h1>
+    <p id="hira_ans">けっかがでるよ</p>
+    <form class="hira_form">
+      <input type="text" id="hira_text" name="" value="" placeholder="もじをにゅうりょくしてね！">
+      <button type="button" id="btn">？</button>
+    </form>
+
+    <script type="text/javascript">
+    $(function(){
+      $('#btn').on('click',function(e) {
+        let hira = $('#hira_text').val();
+        if (hira=="") {
+          $('#hira_ans').text('入力してない。');
+        }else if(/^[ぁ-んー]*$/.test(hira)) {
+          $('#hira_ans').text('ひらがな！');
+        } else {
+          $('#hira_ans').text('平仮名じゃない。');
+        }
+      });
+
+    });
+
+    </script>
+  </body>
+</html>
